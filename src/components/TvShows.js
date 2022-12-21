@@ -44,7 +44,7 @@ function TvShows() {
             </Fragment>
               )
       })}
-      <AiOutlineClose id={toggle ? '' : ''} className={toggle ? 'DarkTheme' : 'LightThemeClose'}fontSize={55} color="#fff" cursor={'pointer'} onClick={()=> setTrailer(true)} />
+      <AiOutlineClose id={trailer ? 'Nothing' : 'Exit1'} className={toggle ? 'DarkTheme' : 'LightThemeClose'}fontSize={55} color="#fff" cursor={'pointer'} onClick={()=> setTrailer(true)} />
       </div>
       </div>
     </Fragment>
