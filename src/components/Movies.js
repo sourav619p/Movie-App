@@ -26,7 +26,6 @@ function Movies() {
   useEffect(() => {
     MovieCall()
   },[input])
-  console.log(moviesData)
   return (
     <Fragment>
       <div className={toggle ? "mainBgColor" : 'secondaryBgColor'}>
@@ -37,7 +36,7 @@ function Movies() {
         <div id={trailer ? 'container' : 'Nocontainer'}>
           <AiFillPlayCircle color='green' fontSize={40} id="playIcon" />
           <img src={movie.poster_path ? `${Images}${movie.poster_path}` : NoImg } alt='' />
-          <h3 id={movie.title.length > 28 ? 'smaller-Text' : ''}>{movie.title}</h3>
+          <h3 className='movie-name' id={movie.title.length > 28 ? 'smaller-Text' : ''}>{movie.title}</h3>
         </div>
         </Fragment>
         )
