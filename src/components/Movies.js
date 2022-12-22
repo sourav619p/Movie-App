@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { Fragment, useContext, useEffect, useState } from 'react'
-import {AiFillPlayCircle,AiOutlineClose} from 'react-icons/ai'
+import {AiFillPlayCircle, AiOutlineClose} from 'react-icons/ai'
 import NoImg from './NoImage.jpg';
 import { Container } from './NavBar';
 import '../Styles/Videos.css'

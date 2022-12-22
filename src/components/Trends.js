@@ -23,7 +23,9 @@ function Trends() {
     setTrendArray(results)
   }
   useEffect(() => {
-    Trends()
+    setTimeout(()=>{
+      Trends()
+    },100)
   },[])
   const TrendTitle =(trend)=>{
     setTrendTitle(trend.title)

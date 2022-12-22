@@ -7,23 +7,28 @@ import '../Styles/Videos.css'
 
 function TvShows() {
   const {toggle, inputValue} = useContext(Container)
+  const input = inputValue
   const [showData,setShowData]=useState([])
   const [trailer,setTrailer] =useState(true)
+  const Shown = input ? 'search' : 'discover'
   const [title,setTitle] = useState('')
-  const Api ="https://api.themoviedb.org/3/discover/tv"
+  const Api =`https://api.themoviedb.org/3/${Shown}/tv`
   const Images = "https://image.tmdb.org/t/p/w500/"
   const TvShows = async () =>{
     const data = await axios.get(Api,{
       params:{
-        api_key: '911faf4d217a1906ddd69c7cc01f31cc'
+        api_key: '911faf4d217a1906ddd69c7cc01f31cc',
+        query: input
       }
     })
     const results=data.data.results
     setShowData(results)
   }
   useEffect(()=>{
-    TvShows()
-  },[])
+    setTimeout(()=>{
+      TvShows()
+    },100)
+  },[input])
   console.log(showData)
   const TvShowTitle = (shows) => {
     setTitle(shows.name)
