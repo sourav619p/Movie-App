@@ -4,12 +4,12 @@ import ReactPlayer from 'react-player'
 import movieTrailer from 'movie-trailer'
 import '../Styles/TrailerMovie.css'
 
-function TrailerMovies({moviesTitle,toggle}) {
+function TrailerTrending({TrendingTitle}) {
   const [video,setVideo]=useState("");
   const [videoURL,setVideoURL] = useState("");
 
   function handleSearch(){
-    setVideo(moviesTitle)
+    setVideo(TrendingTitle)
     movieTrailer(video).then((res)=>{
       setVideoURL(res);
     });
@@ -22,11 +22,10 @@ function TrailerMovies({moviesTitle,toggle}) {
     <div className="Container">
     </div>
     <div className="player">
-      <h3 id={toggle ? 'TrailerMovie-name-dark' : 'TrailerMovie-name-light'}>{moviesTitle}</h3>
       <ReactPlayer url={videoURL} controls={true} muted={false} />
     </div>
   </Fragment>
   )
 }
 
-export default TrailerMovies
+export default TrailerTrending

@@ -50,7 +50,7 @@ function TvShows() {
             </Fragment>
               )
       })}
-      {trailer ? console.log : <TrailerTvshows TvShowsTitle={title}/>}
+      {trailer ? console.log : <TrailerTvshows TvShowsTitle={title} toggle={toggle}/>}
       <AiOutlineClose id={trailer ? 'Nothing' : 'Exit1'} className={toggle ? 'DarkTheme' : 'LightThemeClose'}fontSize={55} color="#fff" cursor={'pointer'} onClick={()=> setTrailer(true)} />
       </div>
       </div>
